@@ -8,9 +8,10 @@
  */
 
 export const wyniki: unknown = {
-    1: ""
+  1: '',
 }
 
 //# ---
 
-export const wynikiAleZTypem = wyniki;
+export const wynikiAleZTypem: Record<number, string> =
+  wyniki as Record<number, string>

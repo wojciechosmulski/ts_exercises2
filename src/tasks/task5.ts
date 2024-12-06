@@ -8,14 +8,14 @@
  */
 
 export type Wydatek = {
-    kwota: number;
-    opis: string;
+  kwota: number
+  opis: string
 }
 
-//# ---
+export type WycieczkaSzefaNaKosztFirmy = WydatekSzefa & {
+  cel: string
+}
 
-//export type WydatekSzefa = any;
-export type WycieczkaSzefaNaKosztFirmy = any;
-
-export interface WydatekSzefa {};
-//export interface WycieczkaSzefaNaKosztFirmy {};
+export type WydatekSzefa = Wydatek & {
+  isSzef: true
+}

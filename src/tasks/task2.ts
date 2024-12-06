@@ -1,4 +1,4 @@
-import { Kontrola, kontrola1, kontrola2 } from "./task1.js";
+import { Kontrola, kontrola1, kontrola2 } from './task1.js'
 /**
  * Zadanie 2.
  *
@@ -6,17 +6,22 @@ import { Kontrola, kontrola1, kontrola2 } from "./task1.js";
  * Stwórz typ `WszystkieKontrole` będący tablicą obiektów typu `Kontrola` lub typu `KontrolaZNotatkąOdSzefa`.
  */
 
-export type KontrolaZNotatkąOdSzefa = any;
+export type KontrolaZNotatkąOdSzefa = Kontrola & {
+  notatkaOdSzefa: string
+}
 
-export type WszystkieKontrole = any;
+export type WszystkieKontrole = (
+  | Kontrola
+  | KontrolaZNotatkąOdSzefa
+)[]
 
 export const kontrolaZNotatką: KontrolaZNotatkąOdSzefa = {
-    ...kontrola2,
-    notatkaOdSzefa: "Kogoś chyba pogździło"
+  ...kontrola2,
+  notatkaOdSzefa: 'Kogoś chyba pogździło',
 }
 
 export const wszystkieKontrole: WszystkieKontrole = [
-    kontrola1,
-    kontrolaZNotatką,
-    kontrola2
+  kontrola1,
+  kontrolaZNotatką,
+  kontrola2,
 ]
